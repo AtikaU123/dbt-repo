@@ -17,8 +17,19 @@ sources:
            identifier: raw_gz_product
            description: purchase_price by products_id
            columns:
-             - name: products_id
+             - name: "(orders_id || '-' || pdt_id)"
                description: primary key of the table
                tests:
                  - unique
                  - not_null
+
+         - name: ship
+           identifier: raw_gz_ship 
+           description: purchase_price by products_id
+           columns:
+             - name: "(orders_id || '-' || pdt_id)"
+               description: primary key of the table
+               tests:
+                 - unique
+                 - not_null
+                   
